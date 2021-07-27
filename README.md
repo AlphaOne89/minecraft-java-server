@@ -1,4 +1,4 @@
-# raspberry.pi.minecraft
+# raspberry.pi.minecraft.server
 
 A sh based script that installs the Java library, creates a screen window, and starts a Minecraft server.
 

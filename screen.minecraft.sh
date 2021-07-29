@@ -12,6 +12,8 @@ if [ ! -f "paperclip.jar" ]; then
 
     wget --output-document=paperclip.jar ${path_file_minecraft}
 
+    echo "eula=true" > eula.txt;
+
 fi
 
 if [ -f "paperclip.jar" ] && [ "$1" = 'update' ]; then

@@ -1,16 +1,16 @@
 #!/bin/sh
 
-# git clone --depth 1 https://github.com/xxalfa/raspberry.pi.minecraft minecraft;
+# git clone --depth 1 https://github.com/AlphaOne89/raspberry.pi.minecraft minecraft;
 
 # cd minecraft && sh screen.minecraft.sh;
 
-path_file_minecraft='https://papermc.io/api/v1/paper/1.17.1/latest/download';
+minecraft_file_path='https://papermc.io/api/v1/paper/1.17.1/latest/download';
 
 if [ ! -f "paperclip.jar" ]; then
 
     apt-get install openjdk-16-jre-headless screen --yes;
 
-    wget --output-document=paperclip.jar ${path_file_minecraft}
+    wget --output-document=paperclip.jar ${minecraft_file_path}
 
     echo "eula=true" > eula.txt;
 
@@ -20,7 +20,7 @@ if [ -f "paperclip.jar" ] && [ "$1" = 'update' ]; then
 
     mv paperclip.jar download;
 
-    wget --timestamping --no-if-modified-since ${path_file_minecraft}
+    wget --timestamping --no-if-modified-since ${minecraft_file_path}
 
     mv download paperclip.jar;
 
@@ -36,7 +36,7 @@ if [ ! -f "server.properties" ]; then
 
 fi
 
-screen_counter=$(screen -list | grep --count --only-matching --extended-regexp --regexp="screen.window.1");
+screen_counter=$(screen -list | grep --count --only-matching --extended-regexp --regexp="screen.window.minecraft.one");
 
 if [ ${screen_counter} -eq 0 ]; then
 
@@ -48,8 +48,8 @@ if [ ${screen_counter} -eq 0 ]; then
 
     fi
 
-    /usr/bin/screen -dmSU screen.window.1 /usr/bin/java -jar -Xms${memory}M -Xmx${memory}M -Dcom.mojang.eula.agree=true paperclip.jar;
+    /usr/bin/screen -dmSU screen.window.minecraft.one /usr/bin/java -jar -Xms${memory}M -Xmx${memory}M -Dcom.mojang.eula.agree=true paperclip.jar;
 
 fi
 
-screen -r screen.window.1
+screen -r screen.window.minecraft.one

@@ -1,5 +1,5 @@
 #!/bin/sh
-minecraft_file_path='https://papermc.io/api/v1/paper/1.17.1/latest/download';
+minecraft_file_path='https://piston-data.mojang.com/v1/objects/59353fb40c36d304f2035d51e7d6e6baa98dc05c/server.jar';
 if [ ! -f "server.jar" ]; then
 apt-get install default-jre screen --yes;
 wget --output-document=server.jar ${minecraft_file_path}

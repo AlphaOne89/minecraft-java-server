@@ -6,9 +6,9 @@ wget --output-document=server.jar ${minecraft_file_path}
 echo "eula=true" > eula.txt;
 fi
 if [ -f "server.jar" ] && [ "$1" = 'update' ]; then
-mv server.jar download;
+# mv server.jar download;
 wget --timestamping --no-if-modified-since ${minecraft_file_path}
-mv download server.jar;
+# mv download server.jar;
 fi
 if [ ! -f "server.properties" ]; then
 read -p 'Type in a server name: ' input_prompt;

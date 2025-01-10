@@ -14,6 +14,7 @@ if [ ! -f "server.properties" ]; then
 read -p 'Type in a server name: ' input_prompt;
 echo "server-name=${input_prompt}" >> server.properties;
 echo "motd=${input_prompt}" >> server.properties;
+echo "spawn-protection=0" >> server.properties;
 fi
 screen_counter=$(screen -list | grep --count --only-matching --extended-regexp --regexp="screen.window.minecraft.one");
 if [ ${screen_counter} -eq 0 ]; then

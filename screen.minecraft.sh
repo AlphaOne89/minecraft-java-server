@@ -18,8 +18,7 @@ echo "spawn-protection=0" >> server.properties;
 fi
 screen_counter=$(screen -list | grep --count --only-matching --extended-regexp --regexp="screen.window.minecraft.one");
 if [ ${screen_counter} -eq 0 ]; then
-memory=2500;
-/usr/bin/screen -dmSU screen.window.minecraft.one /usr/bin/java -jar -Xms${memory}M -Xmx${memory}M -Dcom.mojang.eula.agree=true server.jar;
+/usr/bin/screen -dmSU screen.window.minecraft.one /usr/bin/java -jar -Xms2500M -Xmx2500M -Dcom.mojang.eula.agree=true server.jar;
 fi
 screen -r screen.window.minecraft.one
 # screen -S screen.window.minecraft.one -p 0 -X stuff "^C";

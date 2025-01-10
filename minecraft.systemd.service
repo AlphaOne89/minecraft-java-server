@@ -1,0 +1,24 @@
+[Unit]
+Description=MINECRAFT
+After=network-online.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/minecraft_java_server
+ExecStart=/usr/bin/env java -jar -Xmx2500M -Xms2500M server.jar nogui
+Restart=no
+
+# ExecStop=/usr/bin/env fuser --kill 25565/tcp
+# StandardInput=null
+# StandardOutput=null
+# StandardError=null
+# Restart=on-failure
+# RestartSec=60
+
+[Install]
+WantedBy=default.target
+
+# cp ./minecraft.systemd.service /etc/systemd/system/minecraft.systemd.service; systemctl daemon-reload; systemctl enable minecraft.systemd.service; systemctl start minecraft.systemd.service; systemctl status minecraft.systemd.service
+# systemctl disable minecraft.systemd.service; systemctl stop minecraft.systemd.service; systemctl daemon-reload; rm /etc/systemd/system/minecraft.systemd.service

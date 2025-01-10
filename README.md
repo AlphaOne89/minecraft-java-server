@@ -1,9 +1,9 @@
 # Minecraft Java Server
 ### INSTALL
 ```sh
-sh screen.minecraft.sh
+sh minecraft.screen.sh
 ```
 ### UPDATE
 ```sh
-sh screen.minecraft.sh update
+sh minecraft.screen.sh update
 ```
